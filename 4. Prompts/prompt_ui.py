@@ -1,9 +1,8 @@
 import streamlit as st
 from dotenv import load_dotenv
-import os
 
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate,load_prompt
 
 load_dotenv()
 
@@ -30,28 +29,18 @@ selected_paper = st.selectbox("📄 Choose a Research Paper", list(papers.keys()
 selected_style = st.selectbox("🧠 Explanation Style", explanation_styles)
 selected_length = st.selectbox("📏 Summary Length", summary_lengths)
 
+template = load_prompt("./template.json")
 # Button
 if st.button("✨ Summarize"):
     with st.spinner("Generating summary..."):
 
-        # Dynamic prompt construction
-        template = ChatPromptTemplate("""
-        You are a helpful AI trained in summarizing research papers. 
-        Provide a summary of the following paper in the style of "{style}" and the length category "{length}".
+        chain = template | llm
+        result = chain.invoke({
+            'style':selected_style,
+            'title':selected_paper,
+            'length':selected_length,
+            'abstract':papers[selected_paper]
+        })
 
-        Paper Title: "{title}"
-        Abstract: "{abstract}"
-
-        Ensure the summary is coherent, informative, and well-written.
-        """)
-
-        prompt = prompt_template.format_messages(
-            style=selected_style,
-            length=selected_length,
-            title=selected_paper,
-            abstract=papers[selected_paper]
-        )
-
-        result = llm.invoke(prompt)
         st.markdown("### 🔍 Generated Summary")
         st.success(result.content)

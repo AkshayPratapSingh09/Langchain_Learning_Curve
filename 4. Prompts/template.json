@@ -1,0 +1,18 @@
+{
+    "name": null,
+    "input_variables": [
+        "abstract",
+        "length",
+        "style",
+        "title"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "\nYou are a helpful AI trained in summarizing research papers. \nProvide a summary of the following paper in the style of \"{style}\" and the length category \"{length}\".\n\nPaper Title: \"{title}\"\nAbstract: \"{abstract}\"\n\nEnsure the summary is coherent, informative, and well-written.\n",
+    "template_format": "f-string",
+    "validate_template": true,
+    "_type": "prompt"
+}
