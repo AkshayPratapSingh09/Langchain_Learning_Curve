@@ -148,3 +148,45 @@ Two types of models are there in Langchain
 ```
 </div>
 
+## #Prompts
+
+**PromptTemplates** are structured ways to create dynamic prompts
+
+**Why use PromptTemplate over f strings?**
+  1. Default Validation(Production Tolerant)
+  1. Reusable
+  1. Langchain Ecosystem
+
+  # #Messages
+
+### 📬 Types of Messages in LangChain
+
+| Message Type     | Description                                             | Common Use Case                        |
+|------------------|---------------------------------------------------------|----------------------------------------|
+| `SystemMessage`  | Sets the behavior of the AI assistant                   | "You are a helpful assistant."         |
+| `HumanMessage`   | Represents input from the user                          | "Tell me about LangChain."             |
+| `AIMessage`      | Represents the LLM’s response                           | "LangChain is a framework for..."      |
+| `ToolMessage`    | Captures output from a tool used by an agent            | Tool-generated data or intermediate result |
+| `FunctionMessage`| Holds the return value of a function/tool invocation    | Function call return (e.g., search API)|
+| `ChatMessage`    | Generic message with custom `role` (e.g., "user", "assistant", "function") | Flexible custom messaging |
+
+---
+
+#### 📌 Examples: Message Flow Example
+
+```python
+[
+  SystemMessage("You are a helpful assistant."),
+  HumanMessage("Translate 'Namaste' to English."),
+  AIMessage("Hello"),
+]
+```
+# #Chat Prompt Templates
+
+- We can send dynamic messages within *single message*
+- But for a list of dynamic message we will have to use ***ChatPromptTemplate***
+
+<a href="https://ibb.co/cKD7hdQc"><img src="https://i.ibb.co/GfcbQjRv/image.png" alt="image" border="0"></a>
+
+
+
