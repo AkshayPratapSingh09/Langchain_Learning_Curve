@@ -90,3 +90,61 @@ Two types of models are there in Langchain
 - Have access to tools and have reasoning capabilties
 
 
+# #Model
+
+- This component is cruical in langchain to facilitate Interactions b/w **language models** and **embedding models**
+
+<img src="https://i.ibb.co/9kTVBmnW/image.png" alt="image" border="0">
+
+- There is LLM and there is ChatModel (Both are difference)
+
+`temperature` is a parameter that **controls the randomness of a language model's output**. It affects how **creative or deterministic** the responses are.
+
+- **Lower values (0.0 – 0.3)** → More **deterministic** and predictable.
+- **Higher values (0.7 – 1.5)** → More **random, creative**, and diverse.
+
+<img src="https://i.ibb.co/x88HwL8q/image.png" alt="image" border="0">
+
+
+### When Using Langchain there will be 2 choices for using the Inference
+1. **Normal LLM** - *It will simply return the answer in a string format*
+2. **Chat** - *It will return the response in a proper object/JSON*
+
+<div style="width: 100%">
+
+### 🧾 API Response
+
+```json
+{
+  "content": "Beneath the sky, the bat doth gleam,\nOn fields where heroes chase their dream.\nThe ball flies swift, the crowd’s loud cheer,\nEchoes of joy are ringing near.\nIn cricket's dance, hearts hold dear.",
+  "additional_kwargs": {
+    "refusal": null
+  },
+  "response_metadata": {
+    "token_usage": {
+      "completion_tokens": 53,
+      "prompt_tokens": 15,
+      "total_tokens": 68,
+      "completion_tokens_details": {
+        "accepted_prediction_tokenrobs": null
+      }
+    },
+    "id": "run--96b2776f-05df-4bb1-980a-631f0d96f2fa-0",
+    "usage_metadata": {
+      "input_tokens": 15,
+      "output_tokens": 53,
+      "total_tokens": 68,
+      "input_token_details": {
+        "audio": 0,
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "audio": 0,
+        "reasoning": 0
+      }
+    }
+  }
+}
+```
+</div>
+
