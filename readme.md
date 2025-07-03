@@ -8,7 +8,7 @@
 
 ### 💡Note :: Whenever you are trying to solve a GenAI problem always consider which section it Falls in
 <div align="center">
-  <img width="600px" src="https://i.ibb.co/nH35r3P/image.png" alt="image" border="0">
+  <a href="https://ibb.co/cKJCr5QP"><img src="https://i.ibb.co/1YZdmVT3/image.png" alt="image" border="0"></a>
 </div>
 
 ## #Langchain
@@ -187,6 +187,10 @@ Two types of models are there in Langchain
 - But for a list of dynamic message we will have to use ***ChatPromptTemplate***
 
 <a href="https://ibb.co/cKD7hdQc"><img src="https://i.ibb.co/GfcbQjRv/image.png" alt="image" border="0"></a>
+
+
+
+
 
 
 
