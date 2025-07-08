@@ -17,7 +17,8 @@ parser = StrOutputParser()
 
 chain = prompt | model | parser
 
-result = chain.invoke({'topic':'cricket'})
+# result = chain.invoke({'topic':'cricket'})
+result = chain.invoke({'topic':'AI Tech'})
 
 print(result)
 
