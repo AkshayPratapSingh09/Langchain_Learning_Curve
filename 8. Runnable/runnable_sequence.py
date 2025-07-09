@@ -20,6 +20,7 @@ prompt2 = PromptTemplate(
     input_variables=['text']
 )
 
+# chain = RunnableSequence(prompt1, model, parser, prompt2, model, parser)
 chain = RunnableSequence(prompt1, model, parser, prompt2, model, parser)
 
 print(chain.invoke({'topic':'AI'}))
