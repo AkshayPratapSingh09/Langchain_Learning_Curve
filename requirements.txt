@@ -21,5 +21,6 @@ pydantic
 
 numpy
 scikit-learn
+pypdf
 
 streamlit
